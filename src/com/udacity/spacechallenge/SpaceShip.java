@@ -1,5 +1,8 @@
 package com.udacity.spacechallenge;
 
+/**
+ * Interface specifying methods for all Space ships.
+ */
 public interface SpaceShip {
     boolean launch();
 

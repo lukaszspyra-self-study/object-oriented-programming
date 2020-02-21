@@ -5,8 +5,17 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Class simulation implementing the logic of operations to be carried out to transport all good to space.
+ */
 public class Simulation {
 
+    /**
+     * Method loading cargo list Items extracted from file.
+     *
+     * @param itemFilePath Path to file containing cargo in format (name=weight[kg])
+     * @return ArrayList<Items> objects to be loaded on rockets.
+     */
     public ArrayList<Item> loadItems(String itemFilePath) {
         File itemFile = new File(itemFilePath);
         Scanner readFile = null;
@@ -26,6 +35,12 @@ public class Simulation {
         return loadItems;
     }
 
+    /**
+     * Method loading weight of Items to specific U1 rockets, creating new rockets until all cargo loaded.
+     *
+     * @param loadItems as ArrayList<Items>
+     * @return
+     */
     public ArrayList<U1> loadU1(ArrayList<Item> loadItems) {
         ArrayList<U1> u1List = new ArrayList<>();
         while (!loadItems.isEmpty()) {
@@ -40,6 +55,12 @@ public class Simulation {
         return u1List;
     }
 
+    /**
+     * Method loading weight of Items to specific U2 rockets, creating new rockets until all cargo loaded.
+     *
+     * @param loadItems as ArrayList<Items>
+     * @return
+     */
     public ArrayList<U2> loadU2(ArrayList<Item> loadItems) {
         ArrayList<U2> u2List = new ArrayList<>();
         while (!loadItems.isEmpty()) {
@@ -54,6 +75,12 @@ public class Simulation {
         return u2List;
     }
 
+    /**
+     * Method runSimulation checks the total budget required to send all cargo to space by the mean of particular rockets.
+     *
+     * @param rockets ArrayList<Rockets> which are required to carry all the cargo to space
+     * @return Total cost of mission, considering probabilities of launch explosion and land crash.
+     */
     public int runSimulation(ArrayList<Rocket> rockets) {
         int totalBudget = 0;
         for (Rocket rocket : rockets) {
