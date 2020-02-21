@@ -1,6 +1,6 @@
 package com.udacity.spacechallenge;
 
-public class Rocket implements SpaceShip {
+class Rocket implements SpaceShip {
     int rocketCost;
     int rocketWeight;
     int maxTotalWeight;
@@ -18,7 +18,7 @@ public class Rocket implements SpaceShip {
     }
 
     @Override
-    public boolean canCarry(Item item) {
+    public final boolean canCarry(Item item) {
         if (item.getWeight() + rocketWeight > maxTotalWeight) {
             return false;
         }
@@ -26,8 +26,8 @@ public class Rocket implements SpaceShip {
     }
 
     @Override
-    public int carry(Item item) {
+    public final int carry(Item item) {
         rocketWeight += item.getWeight();
-        return rocketWeight ;
+        return rocketWeight;
     }
 }

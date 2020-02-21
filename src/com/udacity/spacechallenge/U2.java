@@ -1,6 +1,13 @@
 package com.udacity.spacechallenge;
 
 public class U2 extends Rocket {
+
+    public U2() {
+        rocketCost = 120;
+        rocketWeight = 18000;
+        maxTotalWeight = 29000;
+    }
+
     @Override
     public boolean launch() {
         chanceOfLaunchExp = 4 % (rocketWeight / maxTotalWeight);
