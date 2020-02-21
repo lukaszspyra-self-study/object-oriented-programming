@@ -81,7 +81,7 @@ public class Simulation {
      * @param rockets ArrayList<Rockets> which are required to carry all the cargo to space
      * @return Total cost of mission, considering probabilities of launch explosion and land crash.
      */
-    public int runSimulation(ArrayList<Rocket> rockets) {
+    public int runSimulation(ArrayList<? extends Rocket> rockets) {
         int totalBudget = 0;
         for (Rocket rocket : rockets) {
             while (!(rocket.launch() && rocket.land())) {
