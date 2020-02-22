@@ -20,7 +20,7 @@ public class U2 extends Rocket {
      */
     @Override
     public boolean launch() {
-        chanceOfLaunchExp = 4 % ((double)rocketWeight / maxTotalWeight);
+        chanceOfLaunchExp = 0.04 * ((double) rocketWeight / maxTotalWeight);
         if (chanceOfLaunchExp > Math.random()) {
             return false;
         }
@@ -35,7 +35,7 @@ public class U2 extends Rocket {
      */
     @Override
     public boolean land() {
-        chanceOfLandCrash = 8 % ((double)rocketWeight / maxTotalWeight);
+        chanceOfLandCrash = 0.08 * ((double) rocketWeight / maxTotalWeight);
         if (chanceOfLandCrash > Math.random()) {
             return false;
         }

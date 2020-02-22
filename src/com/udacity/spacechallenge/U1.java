@@ -20,7 +20,7 @@ public class U1 extends Rocket {
      */
     @Override
     public boolean launch() {
-        chanceOfLaunchExp = 5 % ((double)rocketWeight / maxTotalWeight);
+        chanceOfLaunchExp = 0.05 * ((double) rocketWeight / maxTotalWeight);
         return !(chanceOfLaunchExp > Math.random());
     }
 
@@ -32,7 +32,7 @@ public class U1 extends Rocket {
      */
     @Override
     public boolean land() {
-        chanceOfLandCrash = 1 % ((double)rocketWeight / maxTotalWeight);
+        chanceOfLandCrash = 0.01 * ((double) rocketWeight / maxTotalWeight);
         return !(chanceOfLandCrash > Math.random());
     }
 }
